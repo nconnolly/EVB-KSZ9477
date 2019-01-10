@@ -5,6 +5,7 @@
 
 # Allow a few customizations from a config file
 test -r /etc/default/dropbear && . /etc/default/dropbear
+[ ! -f /var/log/wtmp ] && touch /var/log/wtmp
 
 start() {
 	DROPBEAR_ARGS="$DROPBEAR_ARGS -R"
