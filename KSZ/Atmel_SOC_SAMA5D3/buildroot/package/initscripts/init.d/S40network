@@ -10,7 +10,7 @@ case "$1" in
   start)
  	echo "Starting network..."
 	/sbin/ifup -a
-	/bin/echo -e "w 0x7200 0x1f0000\nw 0x7206 0x0140\nq\n" | /usr/sbin/regs_bin //sys/bus/spi/devices/spi1.0	
+	/bin/echo -e "ww 1f8001 0019\nww 1f0004 1a0\nww 1f0000 1340\nq\n" | /usr/sbin/regs_bin //sys/bus/spi/devices/spi1.0	
 	;;
   stop)
 	printf "Stopping network..."
